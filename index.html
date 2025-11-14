@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Global Chat</title>
+    <style>
+        body { font-family: Arial; margin: 40px; background: #f0f8ff; }
+        #chat { border: 2px solid blue; height: 300px; overflow-y: scroll; padding: 15px; background: white; margin: 20px 0; }
+        input { width: 300px; padding: 10px; font-size: 16px; }
+        button { padding: 10px 20px; background: green; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>🌍 Глобальный Чат</h1>
+    <div id="chat"></div>
+    <input type="text" id="msg" placeholder="Введите сообщение...">
+    <button onclick="send()">Отправить</button>
+
+    <script>
+        function send() {
+            var input = document.getElementById('msg');
+            var chat = document.getElementById('chat');
+            if (input.value) {
+                chat.innerHTML += '<div>Сообщение: ' + input.value + '</div>';
+                input.value = '';
+                chat.scrollTop = chat.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
